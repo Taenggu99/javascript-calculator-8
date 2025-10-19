@@ -26,7 +26,7 @@ class App {
       const parts = input.replace("\\n", "\n").split("\n");
 
       if (parts.length < 2) {
-        throw new Error("[ERROR] 잘못된 입력");
+        throw new Error("[ERROR] 잘못된 입력입니다");
       }
 
       //커스텀 구분자 추출
@@ -43,7 +43,7 @@ class App {
 
     //입력값 검증: 숫자가 아닌 값, 음수 체크
     if (numbers.some((num) => isNaN(num) || num < 0)) {
-      throw new Error("[ERROR] 잘못된 입력");
+      throw new Error("[ERROR] 잘못된 입력입니다");
     }
 
     //합계 계산
