@@ -12,6 +12,11 @@ class App {
       Console.print("결과 : 0");
       return;
     }
+
+    // 공백만 있는 입력 처리
+    if (!input.trim()){
+      throw new Error ("ERROR] 입력이 비어있거나 공백입니다.");
+    }
   }
 }
 
