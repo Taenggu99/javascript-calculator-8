@@ -18,7 +18,8 @@ class App {
 
     // 기본 구분자 설정
     const delimiter = /,|;/;
-
+    // 문자열을 구분자로 나누고 숫자로 변환
+    const numbers = input.split(delimiter).map(Number);
 
 
   }
