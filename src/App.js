@@ -22,6 +22,18 @@ class App {
     const numbers = input.split(delimiter).map(Number);
 
 
+
+    // 입력값 검증: 숫자가 아닌 값이나 음수가 있는지 체크
+    if (numbers.some(num => isNaN(num) || num < 0)) {
+      throw new Error("[ERROR] 잘못된 입력");
+    }
+
+    //합계 계산
+    const sum = numbers.reduce((acc, cur) => acc + cur, 0);
+
+    //최종 결과 출력
+    Console.print(`결과 : ${sum}`);
+
   }
 
 
