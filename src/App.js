@@ -1,20 +1,21 @@
-import { Console } from "@woowacourse/mission-utils";
+import { Console } from "@woowacourse/mission-utils"; 
+ // -> 내가 지금 "@woowacourse/mission-utils"을 사용할거니 임포트한다
+// --> Console.readLineAync(prompt) : 프롬프트 표시 후 입력을 기다림
+// --> Console.print(message) :  출력
 
 class App {
   async run() {
     //사용자 입력 받기
     const input = await Console.readLineAsync("덧셈할 문자열을 입력해 주세요.");
+    // -> Console.readLineAsync은 Promise 를 반환하므로 await가 필요하다
 
     //빈 문자열 처리
-    if (input === "") {
+    if (input === "" ) {
       Console.print("결과 : 0");
       return;
     }
 
-    //공백만 있는 입력 처리
-    if (!input.trim()) {
-      throw new Error("[ERROR] 입력 값이 공백입니다.");
-    }
+  
 
     //기본 구분자 설정
     let delimiter = /,|:/; // 쉼표와 콜론
@@ -49,8 +50,17 @@ class App {
     //합계 계산
     const sum = numbers.reduce((acc, cur) => acc + cur, 0);
 
+
+       //공백만 있는 입력 처리
+    if (!input.trim()) {
+      //throw new Error("[ERROR] 입력 값이 공백입니다.");
+       Console.print(`결과 : ${sum}`);
+       return;
+    }
     //최종 결과 출력
     Console.print(`결과 : ${sum}`);
+
+   
   }
 }
 
